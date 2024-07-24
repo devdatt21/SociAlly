@@ -40,6 +40,8 @@ const Navbar = () => {
   const alt = theme.palette.background.alt;
 
   const fullName = `${user.firstName} ${user.lastName}`;
+  const firstName = `${user.firstName}`;
+  console.log(firstName);
 
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
@@ -105,7 +107,7 @@ const Navbar = () => {
               input={<InputBase />}
             >
               <MenuItem value={fullName}>
-                <Typography>{fullName}</Typography>
+                <Typography>{firstName}</Typography>
               </MenuItem>
               <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
             </Select>

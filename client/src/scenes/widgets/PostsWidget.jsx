@@ -37,9 +37,12 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Sort posts by createdAt before rendering
+  const sortedPosts = [...posts].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
   return (
     <>
-      {posts.map(
+      {sortedPosts.map(
         ({
           _id,
           userId,
@@ -51,6 +54,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
           userPicturePath,
           likes,
           comments,
+          createdAt,
         }) => (
           <PostWidget
             key={_id}
@@ -63,6 +67,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
             userPicturePath={userPicturePath}
             likes={likes}
             comments={comments}
+            createdAt={createdAt}
           />
         )
       )}
