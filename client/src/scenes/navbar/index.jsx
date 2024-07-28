@@ -69,7 +69,7 @@ const Navbar = () => {
           >
             <InputBase placeholder="Search..." />
             <IconButton>
-              <Search />
+              <Search/>
             </IconButton>
           </FlexBetween>
         )}
